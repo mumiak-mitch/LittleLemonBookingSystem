@@ -1,0 +1,50 @@
+# Ignore Python byte code files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment-related files and directories
+Pipfile
+Pipfile.lock
+__pypackages__/
+.env
+
+# Ignore database files (SQLite)
+*.sqlite3
+*.db
+
+# Ignore development and IDE-specific files
+*.pyc
+*.pyo
+.vscode/
+.idea/
+
+# Ignore static files (if not using a CDN)
+/staticfiles/
+
+# Ignore media files (if not using a separate storage service)
+/media/
+
+# Ignore log and temporary files
+*.log
+*.swp
+*.swo
+*.swn
+
+# Ignore secret and sensitive information
+*.secret_key
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore backup files
+*.bak
+*.backup
+*.bup
+
+# Ignore macOS system files
+.DS_Store
