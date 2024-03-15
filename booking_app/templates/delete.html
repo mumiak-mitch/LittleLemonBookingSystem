@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+            <h1 class="card-title">Confirm Deletion</h1>
+        </div>
+        <div class="card-body">
+            <p class="card-text">Are you sure you want to delete this booking?</p>
+            <ul class="list-group mb-3">
+                <li class="list-group-item">Name: {{ booking.first_name }}</li>
+                <li class="list-group-item">Reservation Date: {{ booking.reservation_date }}</li>
+                <li class="list-group-item">Reservation Slot: {{ booking.reservation_slot }}</li>
+            </ul>
+            <form action="{% url 'delete' booking.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger mr-2">Delete</button>
+                <a href="{% url 'details' booking.id %}" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5 mb-4">Update Booking</h1>
+
+    <form action="{% url 'update' booking.id %}" method="post" class="col-md-6">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_first_name">Name:</label>
+            <input type="text" id="id_first_name" name="first_name" class="form-control" value="{{ booking.first_name }}">
+        </div>
+
+        <div class="form-group">
+            <label for="id_reservation_date">Date:</label>
+            <input type="date" id="id_reservation_date" name="reservation_date" class="form-control" value="{{ booking.reservation_date }}">
+        </div>
+
+        <div class="form-group">
+            <label for="id_reservation_slot">Slot:</label>
+            <input type="number" id="id_reservation_slot" name="reservation_slot" class="form-control" value="{{ booking.reservation_slot }}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="{% url 'details' booking.id %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

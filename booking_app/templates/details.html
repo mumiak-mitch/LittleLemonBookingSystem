@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <p>Reservation:</p>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Name: {{ booking.first_name }}</h5>
+            <p class="card-text">Reservation Date: {{ booking.reservation_date }}</p>
+            <p class="card-text">Reservation Slot: {{ booking.reservation_slot }}</p>
+            <a href="{% url 'update' booking.id %}" class="btn btn-primary">Update</a>
+            <a href="{% url 'delete' booking.id %}" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
